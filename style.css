@@ -1,0 +1,36 @@
+:root {
+    --cor-principal:#1a0033;
+    --cor-secundaria:#330066;
+    --cor-luz: #00ff88;
+    --cor-sangue: #8b0000;
+    --fonte-titulo:'Sekuya', cursive;
+    --fonte-normal: 'Sekuya', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(135deg,var(--cor-principal) 0%, var(--cor-secundaria)100%);
+    color: #fff;
+    font-family: var(--fonte-normal);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/*Header com efeito glitch*/
+header{
+    background: rgba(0,0,0,0.09);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--cor-luz);
+    animation: glitch 2s infinite;
+}
+
+.btn-stranger{
+    background: linear-gradient(45deg, var(--cor-luz), #00cc66);
+    color: var(--cor-principal);
+}
+
