@@ -1,8 +1,8 @@
 :root {
-    --cor-principal:#1a0033;
-    --cor-secundaria:#330066;
-    --cor-luz: #00ff88;
-    --cor-sangue: #8b0000;
+    --cor-principal:#1e193c;
+    --cor-secundaria:#073e1e;
+    --cor-luz: #3a5fe5;
+    --cor-sangue: #ff1515;
     --fonte-titulo:'Sekuya', cursive;
     --fonte-normal: 'Sekuya', sans-serif;
 }
@@ -29,8 +29,81 @@ header{
     animation: glitch 2s infinite;
 }
 
+/*
+@keyframes glitch {
+    0%, 100% {transform: translate(0);}
+    20% {transform: translate(-2px,2px);}
+    40% {transform: translate(-2px,-2px);}
+    60% {transform: translate(2px,2px);}
+    80% {transform: translate(2px, -2px);} /*transform - zero px de movimento tanto no eixo x quanto y */
+
+/*Efeito glitch: efeito tremido e distorcido, simulando interferência. */
+
+.logo{
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 4rem); /* clamp(mínimo, preferido, máximo) - ajuda a limitar o valor*/
+    /* VW: viewport widht- janela do navegador
+    rem: root em -  tamanho da fonte no elemento principal*/ 
+    color: var(--cor-luz);
+    text-shadow: 0 0 20px var(--cor-luz);
+    letter-spacing: 0.1em;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% , 100% {opacity: 1;}
+    50% {opacity: 0.7;}
+}
+
+.hero {
+    /*background-color: var(--cor-sangue);*/
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;   
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(0,255, 136,0.1), transparent);
+    z-index: -1;
+
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title{
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle{
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+
+}
+
+.hero-text{
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
 .btn-stranger{
     background: linear-gradient(45deg, var(--cor-luz), #00cc66);
     color: var(--cor-principal);
+    
 }
 
